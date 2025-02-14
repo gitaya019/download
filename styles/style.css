@@ -1,0 +1,297 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #60a5fa;
+    --accent-color: #1e40af;
+    --light-blue: #93c5fd;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    overflow-x: hidden;
+}
+
+.hero {
+    background: radial-gradient(circle at top right, var(--light-blue), var(--primary-color), var(--accent-color));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Animated background elements */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 8s ease-in-out infinite;
+    top: 10%;
+    left: 15%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite reverse;
+    bottom: 10%;
+    right: 15%;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    color: white;
+    backdrop-filter: blur(12px);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.version-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-size: 0.875rem;
+    color: var(--light-gray);
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+.logo-space {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-space::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.2), transparent);
+    transform: translateX(-100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    to { transform: translateX(100%); }
+}
+
+.logo-space img {
+    max-width: 80%;
+    height: auto;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.download-btn {
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--primary-color);
+    padding: 1.2rem 2.5rem;
+    border-radius: 99px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transform: translateX(-100%);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+    background: white;
+}
+
+.download-btn:hover::before {
+    animation: shine 1s;
+}
+
+.phone-mockup {
+    position: relative;
+    width: 320px;
+    height: 650px;
+    margin: 0 auto;
+    transform: perspective(1000px) rotateY(-15deg);
+    transition: transform 0.3s ease;
+}
+
+.phone-mockup:hover {
+    transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+}
+
+.phone-frame {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #1e40af, #1e3a8a);
+    border-radius: 40px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.screen {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notch {
+    width: 150px;
+    height: 25px;
+    background: #1e3a8a;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+@media (max-width: 968px) {
+    .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .logo-space {
+        margin: 0 auto 2rem auto;
+    }
+
+    .phone-mockup {
+        margin-top: 2rem;
+        transform: perspective(1000px) rotateY(0deg) scale(0.85);
+    }
+
+    .phone-mockup:hover {
+        transform: perspective(1000px) rotateY(0deg) scale(0.85) translateY(-10px);
+    }
+
+    .content {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .phone-mockup {
+        transform: scale(0.7);
+    }
+
+    .phone-mockup:hover {
+        transform: scale(0.7) translateY(-10px);
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+}
