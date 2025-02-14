@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmprEstu - App para Estudiantes Emprendedores</title>
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #64B5F6;
+            --accent-color: #1976D2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .content {
+            color: white;
+        }
+
+        .logo-space {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo-space img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 300px;
+            height: 650px;
+            margin: 0 auto;
+        }
+
+        .phone-frame {
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            border-radius: 40px;
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .screen {
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .notch {
+            width: 150px;
+            height: 25px;
+            background-color: #333;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .logo-space {
+                margin: 0 auto 2rem auto;
+            }
+
+            .phone-mockup {
+                margin-top: 3rem;
+                transform: scale(0.8);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .phone-mockup {
+                transform: scale(0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="content">
+                <div class="logo-space">
+                    <!-- Aquí va tu logo -->
+                    <img src="assets/logo.png" alt="Logo Emprestu">
+                </div>
+                <h1>EmprEstu</h1>
+                <p>La plataforma definitiva para estudiantes emprendedores. Conecta, comparte y haz crecer tu negocio con nuestra comunidad universitaria.</p>
+                <a href="assets/emprestu.apk" class="download-btn" onclick="alert('Iniciar descarga de Emprestu.apk')">
+                    <i class="fab fa-android"></i>
+                    Descargar App
+                </a>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen">
+                        <!-- Aquí va la captura de pantalla de tu app -->
+                        <img src="assets/Screenshot.png" alt="Screenshot Emprestu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
